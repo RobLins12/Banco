@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Banco {
     private LinkedList<Conta> contas = new LinkedList<Conta>();
+    private LinkedList<Usuario> usuarios = new LinkedList<Usuario>();
 
     public int criarConta() {
         Random r = new Random();
@@ -93,13 +94,19 @@ public class Banco {
                 u.setId(id);
                 u.setUsuario(usuario);
                 u.setSenha(senha);
+                usuarios.add(u);
                 return true;
             }
         }
         return false;
     }
 
-    public void exibirdados(int numero){
-        
+    public String exibirdados(int numero){
+        for (Usuario usuario : usuarios) {
+            if (usuario.getNumero() == numero) {
+                return "Nome: " + usuario.getNome();
+            }
+        }
+        return "Usuario nao encontrado";
     }
 }
