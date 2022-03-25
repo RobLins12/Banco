@@ -99,6 +99,9 @@ public class Interface{
                     System.out.println("Cadastro invalido");
                 }
             } else if (op == 9){
+                System.out.println("Digite o numero da conta");
+                int numero = s.nextInt();
+                CC.exibirdados(numero);
 
             }
             

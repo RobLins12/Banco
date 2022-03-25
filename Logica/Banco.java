@@ -104,7 +104,7 @@ public class Banco {
     public String exibirdados(int numero){
         for (Usuario usuario : usuarios) {
             if (usuario.getNumero() == numero) {
-                return "Nome: " + usuario.getNome();
+                return "Nome: " + usuario.getNome() + "\n" + "Id: " + usuario.getId() + "\n" + "Saldo: " + usuario.getSaldo();
             }
         }
         return "Usuario nao encontrado";
